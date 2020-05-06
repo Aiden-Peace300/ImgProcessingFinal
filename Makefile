@@ -1,5 +1,5 @@
 CC = g++ 
-OBJS = read.o 
+OBJS = read.o horizontal.o
 
 
 all: imgproc.h imgproc.cpp $(OBJS)
@@ -7,3 +7,6 @@ all: imgproc.h imgproc.cpp $(OBJS)
 
 read.o: imgproc.h read.cpp 
 	$(CC) -c read.cpp -o read.o
+
+horizontal.o: imgproc.h horizontal.cpp 
+	$(CC) -c horizontal.cpp -o horizontal.o 	
