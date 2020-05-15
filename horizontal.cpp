@@ -1,6 +1,18 @@
-#include "imgproc.h" 
+#include "imgproc.h"
 
-void mirrorHoriz(unsigned char R[][HEIGHT], unsigned char G[][HEIGHT], unsigned char B[][HEIGHT]) {
+void mirrorHoriz(unsigned char R[WIDTH][HEIGHT], unsigned char G[WIDTH][HEIGHT],
+unsigned char B[WIDTH][HEIGHT]) {
 
-	cout << "now in mirrorHoriz() which is in horizontal.cpp" << endl; 
+	int i;
+	int j;
+
+	for( i = 0; i < (WIDTH/2); i++)
+	{
+		for( j = 0; j < HEIGHT; j++)
+		{
+			R[i][j] = R[WIDTH-1-i][j];
+			G[i][j] = G[WIDTH-1-i][j];
+			B[i][j] = B[WIDTH-1-i][j];
+		}
+	}
 }
